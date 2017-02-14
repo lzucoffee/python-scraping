@@ -31,7 +31,8 @@ def searchBreadth(targetPageId, currentPageId, depth, nodes):
     for node in nodes:
         found = searchBreadth(targetPageId, node, depth-1, getLinks(node))
         if found is not None:
-            return found.append(currentPageId)
+            found.append(currentPageId)
+            return found
     return None
 
 nodes = getLinks(1)
